@@ -1,129 +1,150 @@
-.todo-container {
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #111;
   }
   
+  /* Container */
+  .todo-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Input row */
   .input-row {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
   }
   
-  .input-row input,
-  .input-row select {
+  .input-row input, .input-row select {
     padding: 8px;
-    flex: 1 1 150px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex: 1;
   }
   
   .input-row button {
-    padding: 8px 12px;
-    background: #3b82f6;
-    color: white;
+    padding: 8px 16px;
+    background-color: #3b82f6;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
+  .input-row button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Task list */
   .task-list {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   
   .task-item {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    gap: 8px;
-    padding: 10px;
-    background: #f3f3f3;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e5e7eb;
   }
   
-  .task-item div {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 5px;
+  .task-item span.completed {
+    text-decoration: line-through;
+    color: #6b7280;
   }
   
+  /* Buttons */
   .task-item button {
-    background: #444;
-    color: white;
-    border: none;
-    padding: 6px 10px;
+    margin-left: 10px;
+    padding: 5px 10px;
     border-radius: 4px;
+    border: none;
     cursor: pointer;
   }
   
-  .task-item button:nth-child(2) {
-    background: #d32f2f;
+  .task-item button:hover {
+    opacity: 0.8;
   }
   
   /* Modal */
   .modal-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     z-index: 1000;
   }
   
   .modal-box {
-    background: #fff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: background 0.3s;
   }
   
-  .modal-box input,
-  .modal-box select {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background-color: #1f2937;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
   }
   
-  .modal-box button {
-    background: #3b82f6;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 4px;
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 12px;
     cursor: pointer;
   }
   
-  /* Dark mode */
+  .sidebar li:hover {
+    color: #3b82f6;
+  }
+  
+  /* Dark Mode */
+  body.dark {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+  body.dark .todo-container {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+  
+  body.dark .input-row input, body.dark .input-row select {
+    background-color: #374151;
+    color: #f9fafb;
+    border: 1px solid #4b5563;
+  }
+  
   body.dark .task-item {
-    background: #1f2937;
+    border-bottom: 1px solid #374151;
   }
   
-  body.dark .task-item button {
-    background: #6366f1;
-  }
-  
-  body.dark .task-item button:nth-child(2) {
-    background: #dc2626;
-  }
-  
-  body.dark .modal-box {
-    background: #1f2937;
-  }
-  
-  body.dark .modal-box button {
-    background: #6366f1;
+  body.dark .task-item span.completed {
+    color: #9ca3af;
   }
   
