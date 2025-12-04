@@ -13,7 +13,7 @@ This is a fully functional React Todo App featuring:
 
 ## Live Demo
 You can view the app online:  
-[Live URL](https://your-live-app-url.com)
+[Live URL](https://react-todo-app-xyz1.netlify.app/)
 
 ## Screenshots
 ### Dashboard View
